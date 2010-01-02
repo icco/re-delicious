@@ -28,8 +28,8 @@ echo "From: $startDate";
 echo "To: $endDate";
 
 # Alrighty, pull and parse data
-#echo "Pulled from $URL";
+echo "Pulled from $URL";
 XML=`curl -s $URL`;
-echo $XML | xsltproc "delicious.xslt" - 
+echo $XML | xsltproc "`dirname $0`/delicious.xslt" - 
 
 exit 0;
