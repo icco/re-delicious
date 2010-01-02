@@ -1,17 +1,13 @@
-<xsl:stylesheet
-   version="1.0"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:str="http://exslt.org/strings"
-   extension-element-prefixes="str"
-   exclude-result-prefixes="str"
-   >
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:str="http://exslt.org/strings" extension-element-prefixes="str" exclude-result-prefixes="str" >
 
 <!--
-
+Outputs a plain text parsable version of a delicious api call
+By Nat Welch
 Based on code by Aristotle Pagaltzis.
 This code is in the public domain.
-
 -->
+<xsl:output method="html" />
+
 <xsl:template match="post">
    <xsl:text>&#10;</xsl:text>
    Title: <xsl:value-of select="@description" />

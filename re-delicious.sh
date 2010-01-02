@@ -1,4 +1,7 @@
 #!/bin/bash
+# This script uses an included xslt file and outputs all of the links you have
+# submitted to del.icio.us in the past week.
+# Written by Nat Welch
 
 # Dates need to be in CCYY-MM-DDThh:mm:ssZ
 dateFormat="+%Y-%m-%dT%H:%M:%S%z";
@@ -11,7 +14,6 @@ options="&fromdt={$startDate}&todt={$endDate}";
 
 if [ $# -lt 2 ]; then
    echo "re-delicious";
-   echo " --- ";
    echo "Prints out urls and descriptions for URLs saved during the last week"
    echo "Usage: $0 username password";
    exit 1;
@@ -28,4 +30,6 @@ echo "To: $endDate";
 # Alrighty, pull and parse data
 #echo "Pulled from $URL";
 XML=`curl -s $URL`;
-echo $XML | xsltproc "delicious.xslt" -
+echo $XML | xsltproc "delicious.xslt" - 
+
+exit 0;
