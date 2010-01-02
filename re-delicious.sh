@@ -28,4 +28,4 @@ echo "To: $endDate";
 # Alrighty, pull and parse data
 #echo "Pulled from $URL";
 XML=`curl -s $URL`;
-echo $XML | xsltproc "delicious-atom-0.1.xslt" -
+echo $XML | xsltproc "delicious.xslt" -
