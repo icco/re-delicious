@@ -25,7 +25,7 @@ echo "Delicious links for $DELICIOUS_USER.";
 echo "From: $startDate";
 echo "To: $endDate";
 
-echo "Pulled from $URL";
-
+# Alrighty, pull and parse data
+#echo "Pulled from $URL";
 XML=`curl -s $URL`;
 echo $XML | xsltproc "delicious-atom-0.1.xslt" -
