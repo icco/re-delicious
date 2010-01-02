@@ -9,13 +9,13 @@ This code is in the public domain.
 <xsl:output method="html" />
 
 <xsl:template match="post">
-   <xsl:text>&#10;</xsl:text>
+   <xsl:text>&#10; ----------- </xsl:text>
    Title: <xsl:value-of select="@description" />
    <xsl:if test="@extended">
-      Description: <xsl:value-of select="@extended" />
+   Description: <xsl:value-of select="@extended" />
    </xsl:if>
-      URL: <xsl:value-of select="@href" /> 
-      When: <xsl:value-of select="@time" />
+   URL: <xsl:value-of select="@href" /> 
+   When: <xsl:value-of select="@time" />
 </xsl:template>
 
 <xsl:template match="/">
